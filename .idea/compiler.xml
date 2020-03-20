@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jvm_learn" />
+        <module name="shexiangtoudiaoyong" />
+        <module name="Tread_learn" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jvm_learn" target="1.5" />
+      <module name="shexiangtoudiaoyong" target="1.5" />
+      <module name="Tread_learn" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
