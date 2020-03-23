@@ -10,7 +10,7 @@ package com.zmq.jvm.final_;
  * ldc：表示将int，float，String类型的常量值从常量池中推送到栈顶。
  * bipush：表示将单字节（-128~127）的常量值推送到栈顶
  * sipush：表示将一个短整型（-53768～32767）的常量值推送到栈顶
- * iconst_1表示讲int类型的1推送到栈顶（iconst_1~iconst_5）到了6仍然是bipush。
+ * iconst_1表示讲int类型的1推送到栈顶（iconst_m1~iconst_5）（-1-5）到了6仍然是bipush。
  */
 public class Test2 {
     public static void main(String[] args) {
