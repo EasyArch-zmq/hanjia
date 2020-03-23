@@ -1,0 +1,33 @@
+package com.zmq.jvm.final_;
+
+/**
+ *
+ * 反编译：cd classes
+ * javap -c java文件
+ * 1.getstatic，ldc等就是助记符。
+ * 3: ldc           #4                  // String aaa
+ * 反编译结果，main方法里的ldc被标注为aaa了
+ * ldc：表示将int，float，String类型的常量值从常量池中推送到栈顶。
+ * bipush：表示将单字节（-128~127）的常量值推送到栈顶
+ * sipush：表示将一个短整型（-53768～32767）的常量值推送到栈顶
+ * iconst_1表示讲int类型的1推送到栈顶（iconst_1~iconst_5）到了6仍然是bipush。
+ */
+public class Test2 {
+    public static void main(String[] args) {
+        System.out.println(Parent2.str);
+
+    }
+}
+class Parent2{
+    /**
+     ***加入final关键字，运行结果是：aaa，并没有执行static代码块
+     * 原因：加了final的str就是一个常量了，不可再被改变，在编译阶段就会被存入
+     * 到调用这个常量的方法所在的类的常量池中。（即str以aaa存放在Test2的常量池中）
+     * 事实上，调用类并没有直接引用到定义这个常量的类，所以Parent2不会初始化。编译过后，这个常量就与Parent2
+     * 没有关系了。
+     */
+    public static final String str="aaa";
+    static {
+        System.out.println("Parent2 static block!");
+    }
+}
